@@ -1,0 +1,36 @@
+    1  sudo apt update 
+    2  sudo apt upgrade -y
+    3  sudo apt install mysql-server -y
+    4  sudo su
+    5  sudo mysql_secure_installation
+    6  sudo mysql -u root
+
+    --Dentro de mysql : root
+        - SELECT user, host FROM mysql.user WHERE user = 'root' AND host = 'localhost';
+        - mysql> SELECT user, host FROM mysql.user WHERE user = 'root' AND host = 'localhost';
+        - mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY '73037897';
+        - exit
+    --
+
+    7  sudo mysql -u root -p
+
+    --Creamos user
+        - CREATE USER 'cga2000'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY '73037897';
+        - GRANT ALL PRIVILEGES ON * . * TO 'cga2000'@'localhost';
+        - FLUSH PRIVILEGES;
+        - exit
+
+    8  sudo mysql_secure_installation
+    9  sudo mysql -u cga2000 -p
+   10  history > comandos.txt
+
+    --Instalar Git
+    11  sudo apt install git
+    12  git --version
+    13  git config --global user.name "Carlos-Gue"
+    14  git config --global user.email carlos.guerrero@vallegrande.edu.pe
+    15  pwd
+    16  git clone https://github.com/Carlos-Gue/SOV-2.git
+    17  cd SOV-2/
+    18  sudo mkdir 1.Inicio
+    19  sudo cp /home/ubuntu/comandos.txt /home/ubuntu/SOV-2/1.Inicio/
