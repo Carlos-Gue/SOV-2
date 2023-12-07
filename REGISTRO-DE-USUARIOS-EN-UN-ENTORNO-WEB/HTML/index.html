@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <section class="formulario">
+        <h1>BIENVENIDOS</h1>
+        <form action="/enviarDatos" method="post" onsubmit="return validarFormulario()">
+            <div>
+                <select name="lenguajes" id="lang" class="opciones">
+                    <option value="Analisis">Analisis de Sistemas</option>
+                    <option value="Agraria">Produccion Agraria</option>
+                </select>
+            </div>
+            <div class="campo">
+                <input type="text" name="nombre" placeholder="Nombres y Apellidos" id="nombre" required>
+            </div>
+            <div class="campos">
+                <input type="number" name="dni" placeholder="DNI" id="dni" pattern=[0-9]{7} required>
+                <input type="date" name="fecha" id="fecha" required>
+            </div>
+            <div class="campo">
+                <input type="email" name="correo" placeholder="Ejemplo@gamil.com" id="correo" required>
+            </div>
+            <div class="campo">
+                <input type="password" name="contraseña" placeholder="Contraseña" id="Contraseña" required>
+            </div>
+            <div>
+                <a href="#">¿Olvido al contraseña?</a>
+            </div>
+            <div class="options">
+                <input type="checkbox" name="terminos" id="terminos" required>
+                <p for="terminos">Acepto la politica de privacidad de los terminos y condiciones</p>
+            </div>
+            <button type="submit">REGISTRARME</button>
+        </form>
+    </section>
+    <script src="/JS/scrip.js"></script>
+</body>
+</html>
